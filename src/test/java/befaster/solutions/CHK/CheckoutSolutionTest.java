@@ -13,7 +13,7 @@ public class CheckoutSolutionTest {
 
     private CheckoutSolution checkout;
 
-    private final String nonDiscountSkuNumbers = "A, B, C";
+    private final String nonDiscountSkuNumbers = "C, D";
 
     @BeforeEach
     public void setUp() {
@@ -27,11 +27,12 @@ public class CheckoutSolutionTest {
         @Test
         @DisplayName("then the total sum of the skus should be returned")
         public void testTotalSumOfProducts() {
-            int sumOfnonDiscountSkus;
+            int sumOfnonDiscountSkus = 35;
 
-//            assertThat(checkout.checkout(nonDiscountSkuNumbers), equalTo());
+            assertThat(checkout.checkout(nonDiscountSkuNumbers), equalTo(sumOfnonDiscountSkus));
         }
 
     }
 
 }
+
