@@ -1,10 +1,8 @@
 package befaster.solutions.CHK;
 
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
+
+import org.junit.jupiter.api.*;
 
 
 import java.time.Instant;
@@ -12,13 +10,14 @@ import java.time.Instant;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CheckoutSolutionTest {
 
     private CheckoutSolution checkout;
 
     private final String nonDiscountSkuNumbers = "C, D";
 
-    @BeforeEach
+    @BeforeAll
     public void setUp() {
         checkout = new CheckoutSolution();
     }
@@ -75,6 +74,11 @@ public class CheckoutSolutionTest {
             assertEquals(115, checkout.checkout("ABCD"));
         }
 
+        @Test
+        public void testA() {
+            assertEquals(50, checkout.checkout("A"));
+        }
+
     }
 
     @Nested
@@ -99,3 +103,4 @@ public class CheckoutSolutionTest {
     }
 
 }
+
