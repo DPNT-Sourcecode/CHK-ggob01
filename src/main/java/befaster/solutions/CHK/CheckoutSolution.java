@@ -16,19 +16,26 @@ import java.util.logging.Logger;
 public class CheckoutSolution {
 
     static Logger logger = Logger.getLogger(CheckoutSolution.class.getName());
-    private HashMap<String, SkuPricing> priceList =
+    private HashMap<String, SkuPricing> priceList;
     public Integer checkout(String skus) {
         return -1;
     }
 
     private HashMap<String, SkuPricing> buildPriceList() {
+        HashMap<String, SkuPricing> pricing = new HashMap<>();
+
         try {
             Object parsed = new JSONParser().parse(new FileReader("./skusRaw.json"));
             JSONObject jparsed = (JSONObject) parsed;
 
             Iterator<Map.Entry> itr = jparsed.entrySet().iterator();
             while (itr.hasNext()) {
-                Map.Entry sku = itr
+                Map.Entry<String, Object> sku = itr.next();
+
+                int price = sku.getValue()
+                SkuPricing price = new SkuPricing(sku.getKey(), sku.)
+
+                pricing.put(sku.getKey(), )
             }
 
         } catch (IOException | ParseException e) {
@@ -36,4 +43,5 @@ public class CheckoutSolution {
         }
     }
 }
+
 
