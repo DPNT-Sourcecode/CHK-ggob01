@@ -13,14 +13,13 @@ import java.util.logging.Level;
 
 public class Helper {
 
-    public static HashMap<String, SkuPricing> buildPriceList() throws IOException | ParseException {
+    public static HashMap<String, SkuPricing> buildPriceList() throws IOException, ParseException {
         HashMap<String, SkuPricing> pricing = new HashMap<>();
 
-        try {
-            Object parsed = new JSONParser().parse(new FileReader("./skusRaw.json"));
-            JSONObject jparsed = (JSONObject) parsed;
+        Object parsed = new JSONParser().parse(new FileReader("./skusRaw.json"));
+        JSONObject jparsed = (JSONObject) parsed;
 
-            Iterator<Map.Entry> itr = jparsed.entrySet().iterator();
+        Iterator<Map.Entry> itr = jparsed.entrySet().iterator();
 //            while (itr.hasNext()) {
 //                Map.Entry<String, Object> sku = itr.next();
 //
@@ -29,9 +28,7 @@ public class Helper {
 //
 //                pricing.put(sku.getKey(), );
 //            }
-
-        } catch (IOException | ParseException e) {
-            logger.log(Level.SEVERE, e.toString());
-        }
+        return pricing;
+    }
 
 }
