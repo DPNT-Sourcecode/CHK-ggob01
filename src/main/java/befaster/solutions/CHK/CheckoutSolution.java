@@ -32,7 +32,7 @@ public class CheckoutSolution {
             while (itr.hasNext()) {
                 Map.Entry<String, Object> sku = itr.next();
 
-                int price = sku.getValue()
+                int price = sku.getValue().get("price")
                 SkuPricing price = new SkuPricing(sku.getKey(), sku.)
 
                 pricing.put(sku.getKey(), )
@@ -43,5 +43,6 @@ public class CheckoutSolution {
         }
     }
 }
+
 
 
