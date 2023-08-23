@@ -18,7 +18,7 @@ public class CheckoutSolution {
     static Logger logger = Logger.getLogger(CheckoutSolution.class.getName());
     private HashMap<String, SkuPricing> priceList = Helper.buildPriceList();
 
-    private HashMap<String, Integer> checkedOut = new HashMap<>();
+    private HashMap<String, Integer> aggregated = new HashMap<>();
     public Integer checkout(String skus) {
         Integer totalPrice = 0;
         for (String sku : skus.split(", ")) {
@@ -26,14 +26,20 @@ public class CheckoutSolution {
                 return -1;
             }
 
-            int skuMultiple = checkedOut.getOrDefault(sku, 0) + 1;
-            checkedOut.put(sku, skuMultiple);
-
-
-
-            totalPrice += priceList.get(sku).getPrice();
+            aggregateSku(sku);
         }
-        return totalPrice;
+
+        return totalPriceFromAggregateMap();
+    }
+
+    private void aggregateSku(String sku) {
+        int skuMultiple = aggregated.getOrDefault(sku, 0) + 1;
+        aggregated.put(sku, skuMultiple);
+    }
+
+    private int totalPriceFromAggregateMap() {
+        for 
     }
 }
+
 
