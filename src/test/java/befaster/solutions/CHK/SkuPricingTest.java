@@ -18,9 +18,10 @@ public class SkuPricingTest {
     }
 
     @Test
-//    @DisplayName("A price for a given Sku is returned");
     public void testGetPriceForSku() {
         assertThat(sku.getPrice() ,equalTo(10));
     }
 
+
 }
+
