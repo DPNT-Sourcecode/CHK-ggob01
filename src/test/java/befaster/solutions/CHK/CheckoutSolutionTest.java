@@ -56,7 +56,13 @@ public class CheckoutSolutionTest {
             assertEquals(checkout.checkout("A,A,A"), PriceFor3PackOfSkuA);
         }
 
+        @Test
+        @DisplayName("Discount is only applied to multiples for the offer")
+        public void testTotalSumWithOfferStragglers() {
+            Integer PriceFor4PackOfSkuA = 180; // 130 + 50 for 4th product not part of 3 pack
+
+            assertEquals(checkout.checkout("A,A,A,A"), PriceFor4PackOfSkuA);
+        }
     }
 
 }
-
