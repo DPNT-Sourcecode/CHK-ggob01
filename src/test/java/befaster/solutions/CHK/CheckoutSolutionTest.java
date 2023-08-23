@@ -43,6 +43,11 @@ public class CheckoutSolutionTest {
         assertEquals(checkout.checkout("A"), 50);
     }
 
+    @Test
+    public void testInputStringIsProperlySplit() {
+        
+    }
+
     @Nested
     @DisplayName("when there are no discounts to apply")
     class WithoutDiscounts {
@@ -79,5 +84,6 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
 
