@@ -16,19 +16,13 @@ public class Helper {
     public static HashMap<String, SkuPricing> buildPriceList() throws IOException, ParseException {
         HashMap<String, SkuPricing> pricing = new HashMap<>();
 
-        Object parsed = new JSONParser().parse(new FileReader("./JsonSkus.json"));
-        JSONObject jparsed = (JSONObject) parsed;
+        pricing.put("A", new SkuPricing("A", 50, 3, 130));
+        pricing.put("B", new SkuPricing("B", 30, 2, 45));
+        pricing.put("B", new SkuPricing("C", 20));
+        pricing.put("B", new SkuPricing("D", 15));
 
-        Iterator<Map.Entry> itr = jparsed.entrySet().iterator();
-//            while (itr.hasNext()) {
-//                Map.Entry<String, Object> sku = itr.next();
-//
-//                int price = sku.getValue().get("price");
-//                SkuPricing price = new SkuPricing(sku.getKey(), sku.);
-//
-//                pricing.put(sku.getKey(), );
-//            }
         return pricing;
     }
 
 }
+

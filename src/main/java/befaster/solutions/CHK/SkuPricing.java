@@ -14,7 +14,12 @@ public class SkuPricing {
         this.offerPrice = offerPrice;
     }
 
+    public SkuPricing (String sku, int price) {
+        SkuPricing(sku, price, 0, 0);
+    }
+
     public int getPrice() {
         return this.price;
     }
 }
+
