@@ -70,6 +70,11 @@ public class CheckoutSolutionTest {
             assertEquals(checkout.checkout(nonDiscountSkuNumbers), sumOfnonDiscountSkus);
         }
 
+        @Test
+        public void testABCD() {
+            assertEquals(checkout.checkout("ABCD"), 115);
+        }
+
     }
 
     @Nested
@@ -94,6 +99,7 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
 
 
