@@ -45,7 +45,7 @@ public class CheckoutSolutionTest {
 
     @Test
     public void testInputStringIsProperlySplit() {
-        
+
     }
 
     @Nested
@@ -84,6 +84,7 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
 
 
