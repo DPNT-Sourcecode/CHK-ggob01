@@ -18,12 +18,14 @@ public class CheckoutSolution {
     static Logger logger = Logger.getLogger(CheckoutSolution.class.getName());
     private HashMap<String, SkuPricing> priceList = Helper.buildPriceList();
     public Integer checkout(String skus) {
+        Integer totalPrice = 0;
         for (String sku : skus.split(", ")) {
-
+            totalPrice += priceList.get(sku).getPrice();
         }
-        return -1;
+        return totalPrice;
     }
 }
+
 
 
 

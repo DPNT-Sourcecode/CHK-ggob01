@@ -23,6 +23,13 @@ public class CheckoutSolutionTest {
         checkout = new CheckoutSolution();
     }
 
+    @Test
+    @DisplayName("-1 is returned when a non-existent sku is queried")
+    public void testIllegalSku() {
+        String nonExistentSku = "$";
+        assertEquals(checkout.checkout(nonExistentSku), -1);
+    }
+
     @Nested
     @DisplayName("when there are no discounts to apply")
     class WithoutDiscounts {
@@ -38,5 +45,6 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
 
