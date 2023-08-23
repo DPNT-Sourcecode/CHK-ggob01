@@ -44,8 +44,14 @@ public class CheckoutSolutionTest {
     }
 
     @Test
+    @DisplayName("any non-alphanumeric character can be used to split skus in the string")
     public void testInputStringIsProperlySplit() {
-
+        String[] variants = new String[] {
+            "AAA",
+            "A A A",
+            "A, A, A",
+            "A - A % A"
+        }
     }
 
     @Nested
@@ -84,6 +90,7 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
 
 

@@ -24,7 +24,7 @@ public class CheckoutSolution {
             return 0;
         }
 
-        for (String sku : skus.replaceAll("\\s+","").split(",")) {
+        for (String sku : skus.replaceAll("[^A-Za-z]","").split("")) {
             if (!priceList.containsKey(sku)) {
                 return -1;
             }
@@ -61,6 +61,7 @@ public class CheckoutSolution {
         this.aggregated = new HashMap<>();
     }
 }
+
 
 
 
