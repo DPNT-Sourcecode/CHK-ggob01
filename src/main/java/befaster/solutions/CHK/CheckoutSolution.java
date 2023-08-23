@@ -39,14 +39,21 @@ public class CheckoutSolution {
 
     private int totalPriceFromAggregateMap() {
         int totalPrice = 0;
-        int singleChargeItems;
+
         for (Map.Entry<String, Integer> skuCount : aggregated.entrySet()) {
             String sku = skuCount.getKey();
-            if
+            int singleChargeItems = skuCount.getValue();
+            int offerMultiple = priceList.get(sku).getOfferMultiple();
+            if (offerMultiple > 0) {
+                totalPrice += (skuCount.getValue() / offerMultiple) * priceList.get(sku).getOfferPrice();
+                singleChargeItems = skuCount.getValue() % offerMultiple;
+            }
+            totalPrice += singleChargeItems * priceList.get(sku).getPrice();
         }
-        return 1;
+        return totalPrice;
     }
 }
+
 
 
 
