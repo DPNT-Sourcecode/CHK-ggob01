@@ -20,11 +20,15 @@ public class CheckoutSolution {
     public Integer checkout(String skus) {
         Integer totalPrice = 0;
         for (String sku : skus.split(", ")) {
+            if (!priceList.containsKey(sku)) {
+                return -1;
+            }
             totalPrice += priceList.get(sku).getPrice();
         }
         return totalPrice;
     }
 }
+
 
 
 
