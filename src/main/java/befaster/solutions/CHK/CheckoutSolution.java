@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class CheckoutSolution {
 
     static Logger logger = Logger.getLogger(CheckoutSolution.class.getName());
-    private HashMap<String, SkuPricing> priceList;
+    private HashMap<String, SkuPricing> priceList = buildPriceList();
     public Integer checkout(String skus) {
         return -1;
     }
@@ -25,24 +25,11 @@ public class CheckoutSolution {
         HashMap<String, SkuPricing> pricing = new HashMap<>();
 
         try {
-            Object parsed = new JSONParser().parse(new FileReader("./skusRaw.json"));
-            JSONObject jparsed = (JSONObject) parsed;
-
-            Iterator<Map.Entry> itr = jparsed.entrySet().iterator();
-            while (itr.hasNext()) {
-                Map.Entry<String, Object> sku = itr.next();
-
-                int price = sku.getValue().get("price")
-                SkuPricing price = new SkuPricing(sku.getKey(), sku.)
-
-                pricing.put(sku.getKey(), )
-            }
-
+            pricing = Helper.buildPriceList();
         } catch (IOException | ParseException e) {
             logger.log(Level.SEVERE, e.toString());
         }
+
+        return pricing;
     }
 }
-
-
-
