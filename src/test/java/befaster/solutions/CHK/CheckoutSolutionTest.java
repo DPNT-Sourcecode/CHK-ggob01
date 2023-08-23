@@ -50,7 +50,11 @@ public class CheckoutSolutionTest {
             "AAA",
             "A A A",
             "A, A, A",
-            "A - A % A"
+            "A - A %         A"
+        };
+
+        for (String variant : variants) {
+            assertEquals(checkout.checkout(variant), 130);
         }
     }
 
@@ -90,6 +94,7 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
 
 
