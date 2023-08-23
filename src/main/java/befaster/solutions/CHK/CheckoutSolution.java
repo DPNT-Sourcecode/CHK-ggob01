@@ -26,9 +26,14 @@ public class CheckoutSolution {
                 return -1;
             }
 
-//            checkedOut.put(sku, ++checkedOut.getOrDefault(sku, 0));
+            int skuMultiple = checkedOut.getOrDefault(sku, 0) + 1;
+            checkedOut.put(sku, skuMultiple);
+
+
+
             totalPrice += priceList.get(sku).getPrice();
         }
         return totalPrice;
     }
 }
+
