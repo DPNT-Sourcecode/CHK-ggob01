@@ -5,8 +5,12 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
 
 public class CheckoutSolution {
+
+    private priceList
     public Integer checkout(String skus) {
         return -1;
     }
+
+    private
 }
 
