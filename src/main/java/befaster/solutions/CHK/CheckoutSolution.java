@@ -38,14 +38,16 @@ public class CheckoutSolution {
     }
 
     private int totalPriceFromAggregateMap() {
-////        int totalPrice = 0;
-////        int singleChargeItems;
-////        this.aggregated.entrySet().stream().forEach(sku ->
-////            sku.getValue()
-////        );
+        int totalPrice = 0;
+        int singleChargeItems;
+        for (Map.Entry<String, Integer> skuCount : aggregated.entrySet()) {
+            String sku = skuCount.getKey();
+            if
+        }
         return 1;
     }
 }
+
 
 
 
