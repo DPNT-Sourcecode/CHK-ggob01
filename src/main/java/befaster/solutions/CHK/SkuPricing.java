@@ -15,11 +15,15 @@ public class SkuPricing {
     }
 
     public SkuPricing (String sku, int price) {
-        SkuPricing(sku, price, 0, 0);
+        this.sku = sku;
+        this.price = price;
+        this.offerMultiple = 0;
+        this.offerPrice = 0;
     }
 
     public int getPrice() {
         return this.price;
     }
 }
+
 

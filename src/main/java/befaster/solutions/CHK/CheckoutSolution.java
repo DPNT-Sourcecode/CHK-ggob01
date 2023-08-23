@@ -16,20 +16,9 @@ import java.util.logging.Logger;
 public class CheckoutSolution {
 
     static Logger logger = Logger.getLogger(CheckoutSolution.class.getName());
-    private HashMap<String, SkuPricing> priceList = buildPriceList();
+    private HashMap<String, SkuPricing> priceList = Helper.buildPriceList();
     public Integer checkout(String skus) {
         return -1;
     }
-
-    private HashMap<String, SkuPricing> buildPriceList() {
-        HashMap<String, SkuPricing> pricing = new HashMap<>();
-
-        try {
-            pricing = Helper.buildPriceList();
-        } catch (IOException | ParseException e) {
-            logger.log(Level.SEVERE, e.toString());
-        }
-
-        return pricing;
-    }
 }
+
