@@ -78,7 +78,6 @@ public class CheckoutSolutionTest {
         public void testA() {
             assertEquals(50, checkout.checkout("A"));
         }
-
     }
 
     @Nested
@@ -103,4 +102,5 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
