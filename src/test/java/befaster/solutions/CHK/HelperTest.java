@@ -18,15 +18,11 @@ public class HelperTest {
     @Test
     @DisplayName("raw json is converted to a structured sku -> SkuPricing map")
     public void testJsontoStructuredPriceList() {
-        assertDoesNotThrow();
         assertAll("non-failing parse",
-            () -> assertDoesNotThrow(Helper.buildPriceList)
-            );
-        try {
-            Helper.buildPriceList();
-        } catch (IOException | ParseException e) {
-
-        }
+            () -> assertDoesNotThrow(Helper::buildPriceList),
+            () -> assertEquals(Helper::buildPriceList().get)
+        );
     }
 
 }
+
