@@ -72,7 +72,7 @@ public class CheckoutSolutionTest {
 
         @Test
         public void testABCD() {
-            assertEquals(checkout.checkout("ABCD"), 115);
+            assertEquals(115, checkout.checkout("ABCD"));
         }
 
     }
@@ -99,10 +99,3 @@ public class CheckoutSolutionTest {
     }
 
 }
-
-
-
-
-
-
-
