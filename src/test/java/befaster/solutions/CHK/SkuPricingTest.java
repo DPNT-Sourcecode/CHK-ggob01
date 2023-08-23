@@ -22,5 +22,15 @@ public class SkuPricingTest {
         assertThat(sku.getPrice() ,equalTo(10));
     }
 
+    @Test
+    public void testGetOfferMultipleForSku() {
+        assertThat(sku.getOfferMultiple() ,equalTo(2));
+    }
+
+    @Test
+    public void testGetOfferPriceForSku() {
+        assertThat(sku.getOfferPrice() ,equalTo(15));
+    }
 
 }
+

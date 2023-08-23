@@ -24,4 +24,13 @@ public class SkuPricing {
     public int getPrice() {
         return this.price;
     }
+
+    public int getOfferMultiple() {
+        return this.offerMultiple;
+    }
+
+    public int getOfferPrice() {
+        return this.offerPrice;
+    }
 }
+
