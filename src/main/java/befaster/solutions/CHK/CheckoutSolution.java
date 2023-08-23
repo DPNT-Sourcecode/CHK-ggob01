@@ -20,7 +20,9 @@ public class CheckoutSolution {
 
     private HashMap<String, Integer> aggregated = new HashMap<>();
     public Integer checkout(String skus) {
-        
+        if (skus.isBlank()) {
+            return 0;
+        }
 
         Integer totalPrice = 0;
         for (String sku : skus.replaceAll("\\s+","").split(",")) {
@@ -54,4 +56,5 @@ public class CheckoutSolution {
         return totalPrice;
     }
 }
+
 
