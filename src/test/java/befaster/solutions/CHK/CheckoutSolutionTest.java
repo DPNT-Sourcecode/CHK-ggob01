@@ -44,4 +44,19 @@ public class CheckoutSolutionTest {
 
     }
 
+    @Nested
+    @DisplayName("When there are offer items to apply")
+    class WithDiscounts {
+
+        @Test
+        @DisplayName("The discount is applied as expected when the number of items meets the minimu criteria")
+        public void testTotalSumWithMultibuyDiscount() {
+            Integer PriceFor3PackOfSkuA = 130;
+
+            assertEquals(checkout.checkout("A,A,A"), PriceFor3PackOfSkuA);
+        }
+
+    }
+
 }
+
