@@ -21,7 +21,7 @@ public class CheckoutSolution {
     private HashMap<String, Integer> aggregated = new HashMap<>();
     public Integer checkout(String skus) {
         Integer totalPrice = 0;
-        for (String sku : skus.split(", ")) {
+        for (String sku : skus.replaceAll("\\s+","").split(",")) {
             if (!priceList.containsKey(sku)) {
                 return -1;
             }
@@ -53,6 +53,7 @@ public class CheckoutSolution {
         return totalPrice;
     }
 }
+
 
 
 
