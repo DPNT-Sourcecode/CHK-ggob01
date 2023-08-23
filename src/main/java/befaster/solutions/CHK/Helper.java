@@ -16,7 +16,7 @@ public class Helper {
     public static HashMap<String, SkuPricing> buildPriceList() throws IOException, ParseException {
         HashMap<String, SkuPricing> pricing = new HashMap<>();
 
-        Object parsed = new JSONParser().parse(new FileReader("./skusRaw.json"));
+        Object parsed = new JSONParser().parse(new FileReader("./JsonSkus.json"));
         JSONObject jparsed = (JSONObject) parsed;
 
         Iterator<Map.Entry> itr = jparsed.entrySet().iterator();
