@@ -36,6 +36,13 @@ public class CheckoutSolutionTest {
         assertEquals(checkout.checkout(""), 0);
     }
 
+    @Test
+    @DisplayName("aggregated count gets reset after each call")
+    public void testAggregatereset() {
+        checkout.checkout("A");
+        assertEquals(checkout.checkout("A"), 50);
+    }
+
     @Nested
     @DisplayName("when there are no discounts to apply")
     class WithoutDiscounts {
@@ -72,4 +79,5 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 

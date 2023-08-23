@@ -24,7 +24,6 @@ public class CheckoutSolution {
             return 0;
         }
 
-        Integer totalPrice = 0;
         for (String sku : skus.replaceAll("\\s+","").split(",")) {
             if (!priceList.containsKey(sku)) {
                 return -1;
@@ -53,8 +52,15 @@ public class CheckoutSolution {
             }
             totalPrice += singleChargeItems * priceList.get(sku).getPrice();
         }
+        resetAggregated();
+
         return totalPrice;
     }
+
+    private void resetAggregated() {
+        this.aggregated = new HashMap<>();
+    }
 }
+
 
 
