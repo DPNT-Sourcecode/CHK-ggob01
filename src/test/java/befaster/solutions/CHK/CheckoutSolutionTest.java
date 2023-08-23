@@ -9,6 +9,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class CheckoutSolutionTest {
 
-    
+
 
 }
+
