@@ -75,6 +75,7 @@ public class CheckoutSolutionTest {
         }
 
         @Test
+        @RepeatedTest(5)
         public void testA() {
             assertEquals(50, checkout.checkout("A"));
         }
@@ -102,5 +103,6 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
 
