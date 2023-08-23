@@ -18,9 +18,13 @@ public class HelloSolutionTest {
 
     @Test
     public void testSayHello() {
-        assertThat(solution.hello("Jon"), equalTo("Hello, World!"));
+        String friendName = "John";
+        String greeting = "Hello, John!";
+
+        assertThat(solution.hello(friendName), equalTo(greeting));
     }
 
 }
+
 
 
