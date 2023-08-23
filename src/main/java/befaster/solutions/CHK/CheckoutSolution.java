@@ -8,6 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CheckoutSolution {
@@ -21,12 +24,12 @@ public class CheckoutSolution {
     private HashMap<String, SkuPricing> buildPriceList() {
         try {
             Object parsed = new JSONParser().parse(new FileReader("./skusRaw.json"));
+            JSONObject jparsed = (JSONObject) parsed;
+
+            Iterator<Map.Entry> itr = jparsed.get()
+
         } catch (IOException | ParseException e) {
-            logger.log(logger);
+            logger.log(Level.SEVERE, e.toString());
         }
     }
 }
-
-
-
-
