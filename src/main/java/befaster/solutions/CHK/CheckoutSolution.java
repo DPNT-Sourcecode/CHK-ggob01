@@ -26,10 +26,14 @@ public class CheckoutSolution {
             Object parsed = new JSONParser().parse(new FileReader("./skusRaw.json"));
             JSONObject jparsed = (JSONObject) parsed;
 
-            Iterator<Map.Entry> itr = jparsed.get()
+            Iterator<Map.Entry> itr = jparsed.entrySet().iterator();
+            while (itr.hasNext()) {
+                Map.Entry sku = itr
+            }
 
         } catch (IOException | ParseException e) {
             logger.log(Level.SEVERE, e.toString());
         }
     }
 }
+
