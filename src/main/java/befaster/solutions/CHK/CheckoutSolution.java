@@ -8,9 +8,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.logging.Logger;
 
 public class CheckoutSolution {
 
+    static Logger logger = Logger.getLogger(CheckoutSolution.class.getName());
     private HashMap<String, SkuPricing> priceList =
     public Integer checkout(String skus) {
         return -1;
@@ -20,10 +22,11 @@ public class CheckoutSolution {
         try {
             Object parsed = new JSONParser().parse(new FileReader("./skusRaw.json"));
         } catch (IOException | ParseException e) {
-            lo
+            logger.log(logger);
         }
     }
 }
+
 
 
 
