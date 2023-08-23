@@ -30,6 +30,12 @@ public class CheckoutSolutionTest {
         assertEquals(checkout.checkout(nonExistentSku), -1);
     }
 
+    @Test
+    @DisplayName("If not skus are passed return value is 0")
+    public void testWithNoSkus() {
+        assertEquals(checkout.checkout(""), 0);
+    }
+
     @Nested
     @DisplayName("when there are no discounts to apply")
     class WithoutDiscounts {
@@ -66,3 +72,4 @@ public class CheckoutSolutionTest {
     }
 
 }
+
