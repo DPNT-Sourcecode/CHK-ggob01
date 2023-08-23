@@ -38,8 +38,9 @@ public class CheckoutSolution {
     }
 
     private int totalPriceFromAggregateMap() {
-        for 
+        int totalPrice = 0;
+        this.aggregated.entrySet().stream().forEach(sku ->
+            
+        );
     }
 }
-
-
