@@ -14,7 +14,9 @@ public class SkuPricing {
         this.offerPrice = offerPrice;
     }
 
-    public String getPrice() {
+    public int getPrice() {
+        return this.price;
     }
 }
+
 
