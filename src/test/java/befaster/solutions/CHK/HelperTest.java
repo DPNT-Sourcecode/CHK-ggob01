@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class HelperTest {
 
     @Test
-    @DisplayName("raw json is converted to a structured sku -> SkuPricing map")
+    @DisplayName("a structured sku -> SkuPricing map")
     public void testStructuredPriceList() {
         assertAll("assert correct",
             () -> assertTrue(Helper.buildPriceList().containsKey("A")),
@@ -17,3 +17,4 @@ public class HelperTest {
     }
 
 }
+
