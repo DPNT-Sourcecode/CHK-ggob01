@@ -20,9 +20,11 @@ public class HelperTest {
     public void testJsontoStructuredPriceList() {
         assertAll("non-failing parse",
             () -> assertDoesNotThrow(Helper::buildPriceList),
-            () -> assertEquals(Helper::buildPriceList().get)
+            () -> assertTrue(Helper.buildPriceList().containsKey("A")),
+            () -> assertEquals(Helper.buildPriceList().get("A").getPrice(), 50)
         );
     }
 
 }
+
 
