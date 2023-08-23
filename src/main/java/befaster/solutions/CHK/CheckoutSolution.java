@@ -21,7 +21,9 @@ public class CheckoutSolution {
         for (String sku : skus.split(", ")) {
 
         }
+        return -1;
     }
 }
+
 
 
