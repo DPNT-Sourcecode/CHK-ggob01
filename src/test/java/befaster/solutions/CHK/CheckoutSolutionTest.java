@@ -81,16 +81,16 @@ public class CheckoutSolutionTest {
             assertions.put("AA", 100);
             assertions.put("AAA", 130);
             assertions.put("AAAA", 180);
-            assertions.put("AAAAA", 230);
-            assertions.put("AAAAAA", 260);
-            assertions.put("AAAAAAA", 310);
+            assertions.put("AAAAA", 200);
+            assertions.put("AAAAAA", 250);
+            assertions.put("AAAAAAA", 300);
             assertions.put("BB", 45);
             assertions.put("BBB", 75);
             assertions.put("BBBB", 90);
             assertions.put("ABCDABCD", 215);
             assertions.put("BABDDCAC", 215);
             assertions.put("AAABB", 175);
-            assertions.put("ABCDCBAABCABBAAA", 505);
+            assertions.put("ABCDCBAABCABBAAA", 495);
 
             assertions.forEach((skus, cost) -> assertEquals(cost, checkout.checkout(skus)));
         }
@@ -163,4 +163,3 @@ public class CheckoutSolutionTest {
     }
 
 }
-
