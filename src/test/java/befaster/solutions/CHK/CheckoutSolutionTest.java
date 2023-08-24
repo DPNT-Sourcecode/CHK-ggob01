@@ -130,6 +130,14 @@ public class CheckoutSolutionTest {
         }
 
         @Test
+        @DisplayName("The discount is applied as expected when the number of items meets the minimum criteria")
+        public void testTotalSumWithNonQualifyingDiscount() {
+            Integer DiscountPrice = 80;
+
+            assertEquals(checkout.checkout("EE"), DiscountPrice);
+        }
+
+        @Test
         @DisplayName("Discount is only applied to multiples for the offer")
         public void testTotalSumWithOfferStragglers() {
             Integer DiscountPrice = 120; // 130 + 50 for 4th product not part of 3 pack
@@ -154,5 +162,3 @@ public class CheckoutSolutionTest {
     }
 
 }
-
-
