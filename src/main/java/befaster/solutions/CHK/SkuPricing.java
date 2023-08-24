@@ -1,27 +1,6 @@
 package befaster.solutions.CHK;
 
-import java.util.HashMap;
-
 public class SkuPricing {
-
-    class OfferSpecs {
-
-        private String constrainingSku;
-        private int offerPrice;
-
-        public OfferSpecs(String constrainingSku, int offerPrice) {
-            this.constrainingSku = constrainingSku;
-            this.offerPrice = offerPrice;
-        }
-
-        public String getConstrainingSku() {
-            return constrainingSku;
-        }
-
-        public int getOfferPrice() {
-            return offerPrice;
-        }
-    }
 
     private final String sku;
     private final int price;
@@ -29,7 +8,7 @@ public class SkuPricing {
     private final int offerPrice;
     private final String offerType;
 
-    public SkuPricing (String sku, int price, String offerType, HashMap<int, OfferSpecs> offerDetails) {
+    public SkuPricing (String sku, int price, String offerType, int offerMultiple, int offerPrice) {
         this.sku = sku;
         this.price = price;
         this.offerType = offerType;
@@ -61,4 +40,5 @@ public class SkuPricing {
         return this.offerPrice;
     }
 }
+
 

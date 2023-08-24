@@ -2,8 +2,7 @@ package befaster.solutions.CHK;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class CheckoutSolution {
     private final DiscounterFactory discounterFactory;
@@ -55,3 +54,4 @@ public class CheckoutSolution {
         this.aggregated = new HashMap<>();
     }
 }
+
