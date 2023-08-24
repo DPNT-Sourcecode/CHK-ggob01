@@ -8,8 +8,13 @@ public class DiscounterFactory {
     private final HashMap<String, Supplier<Discounter>> discounters = new HashMap<>();
 
     public DiscounterFactory() {
-        discounters.put()
+        this.discounters.put("sameProductDiscount", SameProductDiscount::new);
+    }
+
+    public Discounter getDiscounter(String discounterType) {
+        return this.discounters.get(discounterType).get();
     }
 
 }
+
 
