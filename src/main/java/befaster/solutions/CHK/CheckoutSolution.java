@@ -54,4 +54,3 @@ public class CheckoutSolution {
         this.aggregated = new HashMap<>();
     }
 }
-
