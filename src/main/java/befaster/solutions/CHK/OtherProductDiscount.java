@@ -17,4 +17,3 @@ public class OtherProductDiscount extends Discounter{
         return totalPrice;
     }
 }
-
