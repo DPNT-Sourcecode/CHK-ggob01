@@ -73,30 +73,30 @@ public class CheckoutSolutionTest {
         @Test
         public void testAll() {
             HashMap<String, Integer> assertions = new HashMap<>();
-            id = CHK_R1_002, req = checkout(""), resp = 0
-            id = CHK_R1_003, req = checkout("A"), resp = 50
-            id = CHK_R1_004, req = checkout("B"), resp = 30
-            id = CHK_R1_005, req = checkout("C"), resp = 20
-            id = CHK_R1_006, req = checkout("D"), resp = 15
-            id = CHK_R1_007, req = checkout("a"), resp = -1
-            id = CHK_R1_008, req = checkout("-"), resp = -1
-            id = CHK_R1_009, req = checkout("ABCa"), resp = -1
-            id = CHK_R1_010, req = checkout("AxA"), resp = -1
-            id = CHK_R1_011, req = checkout("ABCD"), resp = 115
-            id = CHK_R1_012, req = checkout("A"), resp = 180
-            id = CHK_R1_013, req = checkout("AA"), resp = 100
-            id = CHK_R1_014, req = checkout("AAA"), resp = 130
-            id = CHK_R1_015, req = checkout("AAAA"), resp = 180
-            id = CHK_R1_016, req = checkout("AAAAA"), resp = 230
-            id = CHK_R1_017, req = checkout("AAAAAA"), resp = 260
-            id = CHK_R1_018, req = checkout("B"), resp = 30
-            id = CHK_R1_019, req = checkout("BB"), resp = 45
-            id = CHK_R1_020, req = checkout("BBB"), resp = 75
-            id = CHK_R1_021, req = checkout("BBBB"), resp = 90
-            id = CHK_R1_022, req = checkout("ABCDABCD"), resp = 215
-            id = CHK_R1_023, req = checkout("BABDDCAC"), resp = 215
-            id = CHK_R1_024, req = checkout("AAABB"), resp = 175
-            id = CHK_R1_001, req = checkout("ABCDCBAABCABBAAA"), resp = 505
+            assertions.put("", 0);
+            assertions.put("A", 50);
+            assertions.put("B", 30);
+            assertions.put("C", 20);
+            assertions.put("D", 15);
+            assertions.put("a", -);1
+            assertions.put("-", -);1
+            assertions.put("ABCa", -);1
+            assertions.put("AxA", -);1
+            assertions.put("ABCD", 115);
+            assertions.put("A", 180);
+            assertions.put("AA", 100);
+            assertions.put("AAA", 130);
+            assertions.put("AAAA", 180);
+            assertions.put("AAAAA", 230);
+            assertions.put("AAAAAA", 260);
+            assertions.put("B", 30);
+            assertions.put("BB", 45);
+            assertions.put("BBB", 75);
+            assertions.put("BBBB", 90);
+            assertions.put("ABCDABCD", 215);
+            assertions.put("BABDDCAC", 215);
+            assertions.put("AAABB", 175);
+            assertions.put("ABCDCBAABCABBAAA", 505);
 
             assertEquals(115, checkout.checkout("ABCD"));
         }
@@ -125,5 +125,6 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
 
