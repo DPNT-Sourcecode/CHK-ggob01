@@ -132,7 +132,7 @@ public class CheckoutSolutionTest {
         @Test
         @DisplayName("Discount is only applied to multiples for the offer")
         public void testTotalSumWithOfferStragglers() {
-            Integer DiscountPrice = 90; // 130 + 50 for 4th product not part of 3 pack
+            Integer DiscountPrice = 120; // 130 + 50 for 4th product not part of 3 pack
 
             assertEquals(checkout.checkout("E, E, E, B"), DiscountPrice);
         }
@@ -154,4 +154,5 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
