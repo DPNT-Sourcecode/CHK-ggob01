@@ -4,11 +4,13 @@ public class SkuPricing {
 
     class OfferSpecs implements Comparable {
 
+        private final int offerMultiple;
         private String constrainingSku;
         private int offerPrice;
 
-        public OfferSpecs(String constrainingSku, int offerPrice) {
+        public OfferSpecs(String constrainingSku, int offerMultiple, int offerPrice) {
             this.constrainingSku = constrainingSku;
+            this.offerMultiple = offerMultiple
             this.offerPrice = offerPrice;
         }
 
@@ -22,7 +24,8 @@ public class SkuPricing {
 
         @Override
         public int compareTo(Object o) {
-            
+            o = (OfferSpecs) o;
+            (this.offerPrice / this.offerMultiple)
         }
     }
 
@@ -64,4 +67,5 @@ public class SkuPricing {
         return this.offerPrice;
     }
 }
+
 
