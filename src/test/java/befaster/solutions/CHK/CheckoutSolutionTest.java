@@ -91,6 +91,9 @@ public class CheckoutSolutionTest {
             assertions.put("BABDDCAC", 215);
             assertions.put("AAABB", 175);
             assertions.put("ABCDCBAABCABBAAA", 495);
+            assertions.put("EEEEBB", 160);
+            assertions.put("BEBEEE", 160);
+            assertions.put("ABCDEABCDE", 280);
 
             assertions.forEach((skus, cost) -> assertEquals(cost, checkout.checkout(skus)));
         }
@@ -163,3 +166,4 @@ public class CheckoutSolutionTest {
     }
 
 }
+
