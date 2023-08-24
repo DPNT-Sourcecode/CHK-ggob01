@@ -37,4 +37,3 @@ public class SkuPricingTest {
         assertThat(sku.getOfferPrice() ,equalTo(15));
     }
 }
-

@@ -40,5 +40,3 @@ public class SkuPricing {
         return this.offerPrice;
     }
 }
-
-

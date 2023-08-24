@@ -10,4 +10,3 @@ public abstract class Discounter {
     }
     public abstract int priceForSku(String sku, HashMap<String, Integer> aggregated);
 }
-
