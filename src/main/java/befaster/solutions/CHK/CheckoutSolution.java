@@ -12,6 +12,7 @@ public class CheckoutSolution {
 
     private HashMap<String, Integer> aggregated = new HashMap<>();
     public Integer checkout(String skus) {
+        logger.log(Level.INFO, "Aggregates for " + skus + " is: " + this.aggregated.toString());
         if (skus.isBlank()) {
             return 0;
         }
@@ -59,4 +60,5 @@ public class CheckoutSolution {
         this.aggregated = new HashMap<>();
     }
 }
+
 
