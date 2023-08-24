@@ -27,14 +27,20 @@ public class SameProductDiscount extends Discounter{
         int totalPrice = 0;
 
         int totalItemsForSku = aggregated.get(sku);
-        int remaining 
+        int remainingForOffers = totalItemsForSku;
         // sort offers array and find largest
         OfferSpecs[] offers = priceList.get(sku).getOfferSpecs();
         Arrays.sort(offers);
-
+        for (OfferSpecs offer : offers) {
+            if (remainingForOffers > offer.getOfferMultiple()) {
+                totalPrice += (remainingForOffers / offer.getOfferMultiple()) * offer.getOfferPrice();
+                remainingForOffers = 
+            }
+        }
         return -1;
     }
 }
+
 
 
 
