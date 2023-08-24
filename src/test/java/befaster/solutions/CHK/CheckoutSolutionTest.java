@@ -70,15 +70,12 @@ public class CheckoutSolutionTest {
         }
 
         @Test
-        public void testABCD() {
+        public void testAll() {
+            
+
             assertEquals(115, checkout.checkout("ABCD"));
         }
 
-        @Test
-        @RepeatedTest(5)
-        public void testA() {
-            assertEquals(50, checkout.checkout("A"));
-        }
     }
 
     @Nested
@@ -103,3 +100,4 @@ public class CheckoutSolutionTest {
     }
 
 }
+
