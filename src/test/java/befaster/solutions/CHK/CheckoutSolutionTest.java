@@ -49,7 +49,7 @@ public class CheckoutSolutionTest {
         };
 
         for (String variant : variants) {
-            assertEquals(checkout.checkout(variant), 130);
+            assertEquals(130, checkout.checkout(variant));
         }
     }
 
@@ -163,3 +163,4 @@ public class CheckoutSolutionTest {
     }
 
 }
+

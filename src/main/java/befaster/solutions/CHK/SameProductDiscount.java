@@ -17,7 +17,7 @@ public class SameProductDiscount extends Discounter{
         OfferSpecs[] offers = priceList.get(sku).getOfferSpecs();
         Arrays.sort(offers);
         for (OfferSpecs offer : offers) {
-            if (remainingForOffers > offer.getOfferMultiple()) {
+            if (remainingForOffers >= offer.getOfferMultiple()) {
                 totalPrice += (remainingForOffers / offer.getOfferMultiple()) * offer.getOfferPrice();
                 remainingForOffers = remainingForOffers % offer.getOfferMultiple();
             }
@@ -26,6 +26,7 @@ public class SameProductDiscount extends Discounter{
         return totalPrice;
     }
 }
+
 
 
 
