@@ -11,10 +11,11 @@ public class Helper {
         pricing.put("B", new SkuPricing("B", 30, "sameProductDiscount", 2, 45));
         pricing.put("C", new SkuPricing("C", 20));
         pricing.put("D", new SkuPricing("D", 15));
-        pricing.put("D", new SkuPricing("D", 15));
+        pricing.put("E", new SkuPricing("E", 40, "otherProductDiscount", 2, 50));
 
         return pricing;
     }
 
 }
+
 
