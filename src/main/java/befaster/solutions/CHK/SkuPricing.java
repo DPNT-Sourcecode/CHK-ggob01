@@ -19,12 +19,17 @@ public class SkuPricing {
     public SkuPricing (String sku, int price) {
         this.sku = sku;
         this.price = price;
+        this.offerType = "";
         this.offerMultiple = 0;
         this.offerPrice = 0;
     }
 
     public int getPrice() {
         return this.price;
+    }
+
+    public String getOfferType() {
+        return this.offerType;
     }
 
     public int getOfferMultiple() {
@@ -35,4 +40,5 @@ public class SkuPricing {
         return this.offerPrice;
     }
 }
+
 

@@ -14,12 +14,17 @@ public class SkuPricingTest {
 
     @BeforeEach
     public void setUp() {
-        sku = new SkuPricing("A", 10, 2, 15);
+        sku = new SkuPricing("A", 10, "offerType", 2, 15);
     }
 
     @Test
     public void testGetPriceForSku() {
         assertThat(sku.getPrice() ,equalTo(10));
+    }
+
+    @Test
+    public void testGetOfferTypeForSku() {
+        assertThat(sku.getOfferType() ,equalTo("offerType"));
     }
 
     @Test
@@ -31,5 +36,5 @@ public class SkuPricingTest {
     public void testGetOfferPriceForSku() {
         assertThat(sku.getOfferPrice() ,equalTo(15));
     }
-
 }
+
