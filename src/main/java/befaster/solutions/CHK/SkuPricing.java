@@ -2,6 +2,30 @@ package befaster.solutions.CHK;
 
 public class SkuPricing {
 
+    class OfferSpecs implements Comparable {
+
+        private String constrainingSku;
+        private int offerPrice;
+
+        public OfferSpecs(String constrainingSku, int offerPrice) {
+            this.constrainingSku = constrainingSku;
+            this.offerPrice = offerPrice;
+        }
+
+        public String getConstrainingSku() {
+            return constrainingSku;
+        }
+
+        public int getOfferPrice() {
+            return offerPrice;
+        }
+
+        @Override
+        public int compareTo(Object o) {
+            
+        }
+    }
+
     private final String sku;
     private final int price;
     private final int offerMultiple;
@@ -40,3 +64,4 @@ public class SkuPricing {
         return this.offerPrice;
     }
 }
+
