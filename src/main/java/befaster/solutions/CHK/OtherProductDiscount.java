@@ -11,7 +11,7 @@ public class OtherProductDiscount extends Discounter{
         int offerMultiple = priceList.get(sku).getOfferMultiple();
         if (offerMultiple > 0) {
             int offerMultiplier = aggregated.get(sku) / offerMultiple;
-            totalPrice += offerMultiplier * priceList.get(sku).getOfferPrice();
+            totalPrice += aggregated.get(sku) * priceList.get(sku).getPrice();
             totalPrice -= (Math.min(offerMultiplier, aggregated.get("B"))) * priceList.get("B").getPrice();
             singleChargeItems = aggregated.get(sku) % offerMultiple;
         }
@@ -19,4 +19,3 @@ public class OtherProductDiscount extends Discounter{
         return totalPrice;
     }
 }
-

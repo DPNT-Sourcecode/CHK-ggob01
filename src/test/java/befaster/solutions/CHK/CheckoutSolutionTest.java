@@ -145,6 +145,8 @@ public class CheckoutSolutionTest {
         @Test
         @DisplayName("multiple discounts are applied to the same products if matched")
         public void testTotalSumWithMultibuyDiscountTypes() {
+            // (2E - 1B) + 2B(seperate offer)
+            // OR should the aggregate for 1 B be removed? 
             Integer DiscountPrice = 95;
 
             assertEquals(DiscountPrice, checkout.checkout("E, E, B, B"));
@@ -152,6 +154,3 @@ public class CheckoutSolutionTest {
     }
 
 }
-
-
-

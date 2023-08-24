@@ -16,4 +16,3 @@ public class DiscounterFactory {
         return discounters.get(discounterType).get();
     }
 }
-
