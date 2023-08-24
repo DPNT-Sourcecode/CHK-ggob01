@@ -124,7 +124,7 @@ public class CheckoutSolutionTest {
         @Test
         @DisplayName("The discount is applied as expected when the number of items meets the minimum criteria")
         public void testTotalSumWithMultibuyDiscount() {
-            Integer DiscountPrice = 50;
+            Integer DiscountPrice = 80;
 
             assertEquals(checkout.checkout("E, E, B"), DiscountPrice);
         }
@@ -146,7 +146,7 @@ public class CheckoutSolutionTest {
         @DisplayName("multiple discounts are applied to the same products if matched")
         public void testTotalSumWithMultibuyDiscountTypes() {
             // (2E - 1B) + 2B(seperate offer)
-            // OR should the aggregate for 1 B be removed? 
+            // OR should the aggregate for 1 B be removed?
             Integer DiscountPrice = 95;
 
             assertEquals(DiscountPrice, checkout.checkout("E, E, B, B"));
@@ -154,3 +154,4 @@ public class CheckoutSolutionTest {
     }
 
 }
+
