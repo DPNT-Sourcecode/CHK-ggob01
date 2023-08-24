@@ -18,9 +18,9 @@ public class CheckoutSolution {
 
         // {"method":"checkout","params":["ABCD"],"id":"CHK_R1_011"}, expected: 115, got: 230
         // Test for this is correct (115), no idea what the problem is.
-        if (skus.equals("ABCD")) {
-            return 115;
-        }
+//        if (skus.equals("ABCD")) {
+//            return 115;
+//        }
 
         for (String sku : skus.replaceAll("[^A-Za-z]","").split("")) {
             if (!priceList.containsKey(sku)) {
@@ -59,3 +59,4 @@ public class CheckoutSolution {
         this.aggregated = new HashMap<>();
     }
 }
+
