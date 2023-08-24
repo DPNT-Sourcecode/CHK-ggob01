@@ -6,10 +6,12 @@ public class SkuPricing {
     private final int price;
     private final int offerMultiple;
     private final int offerPrice;
+    private final String offerType;
 
-    public SkuPricing (String sku, int price, int offerMultiple, int offerPrice) {
+    public SkuPricing (String sku, int price, String offerType, int offerMultiple, int offerPrice) {
         this.sku = sku;
         this.price = price;
+        this.offerType = offerType;
         this.offerMultiple = offerMultiple;
         this.offerPrice = offerPrice;
     }
@@ -33,3 +35,4 @@ public class SkuPricing {
         return this.offerPrice;
     }
 }
+
