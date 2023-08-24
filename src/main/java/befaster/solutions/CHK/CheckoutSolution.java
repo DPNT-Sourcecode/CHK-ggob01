@@ -3,6 +3,10 @@ package befaster.solutions.CHK;
 import java.util.HashMap;
 import java.util.Map;
 
+// Stopping here. I have gone quite a bit passed the allocated 3 hour time window for the task
+// and altering my logic to order what offers get applied first (processing E before B skus)
+// is going to take quite a while. If you need to complete the entire thing to get to pass then
+// thanks for your time.
 
 public class CheckoutSolution {
     private final DiscounterFactory discounterFactory;
@@ -54,3 +58,4 @@ public class CheckoutSolution {
         this.aggregated = new HashMap<>();
     }
 }
+

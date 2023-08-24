@@ -91,7 +91,7 @@ public class CheckoutSolutionTest {
             assertions.put("BABDDCAC", 215);
             assertions.put("AAABB", 175);
             assertions.put("ABCDCBAABCABBAAA", 495);
-            assertions.put("EEEEBB", 160);
+            assertions.put("EEEEBB", 160); // will need to make changes to deduct from B sku aggregate BEFORE processing B skus...
             assertions.put("BEBEEE", 160);
             assertions.put("ABCDEABCDE", 280);
 
@@ -166,4 +166,5 @@ public class CheckoutSolutionTest {
     }
 
 }
+
 
