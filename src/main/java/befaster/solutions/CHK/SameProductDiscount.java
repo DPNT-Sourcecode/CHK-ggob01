@@ -1,5 +1,6 @@
 package befaster.solutions.CHK;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class SameProductDiscount extends Discounter{
@@ -8,8 +9,7 @@ public class SameProductDiscount extends Discounter{
         super();
     }
 
-    @Override
-    public int priceForSku(String sku, HashMap<String, Integer> aggregated) {
+    public int priceForSku2(String sku, HashMap<String, Integer> aggregated) {
         int totalPrice = 0;
 
         int singleChargeItems = aggregated.get(sku);
@@ -21,4 +21,15 @@ public class SameProductDiscount extends Discounter{
         totalPrice += singleChargeItems * priceList.get(sku).getPrice();
         return totalPrice;
     }
+
+    @Override
+    public int priceForSku(String sku, HashMap<String, Integer> aggregated) {
+        int totalPrice = 0;
+
+        int totalItemsForSku = aggregated.get(sku);
+        // sort offers array and find largest
+        OfferSpecs[] offers = priceList.get(sku).getOfferSpecs();
+        Arrays.sort(offers)
+    }
 }
+
