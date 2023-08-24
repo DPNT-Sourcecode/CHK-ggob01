@@ -34,7 +34,7 @@ public class CheckoutSolution {
 
         for (Map.Entry<String, Integer> skuCount : aggregated.entrySet()) {
             String sku = skuCount.getKey();
-            Discounter discounter = new SameProductDiscount();
+            Discounter discounter =
             totalPrice += discounter.priceForSku(sku, this.aggregated);
         }
         resetAggregated();
@@ -46,4 +46,5 @@ public class CheckoutSolution {
         this.aggregated = new HashMap<>();
     }
 }
+
 
