@@ -6,10 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CheckoutSolution {
-
-    static Logger logger = Logger.getLogger(CheckoutSolution.class.getName());
     private HashMap<String, SkuPricing> priceList = Helper.buildPriceList();
-
     private HashMap<String, Integer> aggregated = new HashMap<>();
     public Integer checkout(String skus) {
         if (skus.isBlank()) {
@@ -37,13 +34,8 @@ public class CheckoutSolution {
 
         for (Map.Entry<String, Integer> skuCount : aggregated.entrySet()) {
             String sku = skuCount.getKey();
-            int singleChargeItems = skuCount.getValue();
-            int offerMultiple = priceList.get(sku).getOfferMultiple();
-            if (offerMultiple > 0) {
-                totalPrice += (skuCount.getValue() / offerMultiple) * priceList.get(sku).getOfferPrice();
-                singleChargeItems = skuCount.getValue() % offerMultiple;
-            }
-            totalPrice += singleChargeItems * priceList.get(sku).getPrice();
+            Discounter discounter = new SameProductDiscount();
+            totalPrice += discounter.priceForSku(sku, this.aggregated);
         }
         resetAggregated();
 
@@ -54,3 +46,4 @@ public class CheckoutSolution {
         this.aggregated = new HashMap<>();
     }
 }
+

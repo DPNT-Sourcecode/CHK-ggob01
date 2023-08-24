@@ -11,14 +11,15 @@ public class SameProductDiscount extends Discounter{
     @Override
     public int priceForSku(String sku, HashMap<String, Integer> aggregated) {
         int totalPrice = 0;
-        pr
 
         int singleChargeItems = aggregated.get(sku);
         int offerMultiple = priceList.get(sku).getOfferMultiple();
         if (offerMultiple > 0) {
-            totalPrice += (skuCount.getValue() / offerMultiple) * priceList.get(sku).getOfferPrice();
-            singleChargeItems = skuCount.getValue() % offerMultiple;
+            totalPrice += (aggregated.get(sku) / offerMultiple) * priceList.get(sku).getOfferPrice();
+            singleChargeItems = aggregated.get(sku) % offerMultiple;
         }
         totalPrice += singleChargeItems * priceList.get(sku).getPrice();
+        return totalPrice;
     }
 }
+
