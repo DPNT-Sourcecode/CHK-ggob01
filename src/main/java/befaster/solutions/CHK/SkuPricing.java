@@ -19,7 +19,7 @@ public class SkuPricing {
     public SkuPricing (String sku, int price) {
         this.sku = sku;
         this.price = price;
-        this.offerType = "";
+        this.offerType = "noDiscount";
         this.offerMultiple = 0;
         this.offerPrice = 0;
     }

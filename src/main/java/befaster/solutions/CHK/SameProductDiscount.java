@@ -22,4 +22,3 @@ public class SameProductDiscount extends Discounter{
         return totalPrice;
     }
 }
-
