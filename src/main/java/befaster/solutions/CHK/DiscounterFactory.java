@@ -5,6 +5,11 @@ import java.util.function.Supplier;
 
 public class DiscounterFactory {
 
-    private final HashMap<String, Supplier<Interface>>
+    private final HashMap<String, Supplier<Discounter>> discounters = new HashMap<>();
+
+    public DiscounterFactory() {
+        discounters.put()
+    }
 
 }
+
