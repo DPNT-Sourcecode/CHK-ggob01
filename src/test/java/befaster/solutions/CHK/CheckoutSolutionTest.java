@@ -83,6 +83,7 @@ public class CheckoutSolutionTest {
             assertions.put("AAAA", 180);
             assertions.put("AAAAA", 230);
             assertions.put("AAAAAA", 260);
+            assertions.put("AAAAAAA", 310);
             assertions.put("BB", 45);
             assertions.put("BBB", 75);
             assertions.put("BBBB", 90);
@@ -162,3 +163,4 @@ public class CheckoutSolutionTest {
     }
 
 }
+
