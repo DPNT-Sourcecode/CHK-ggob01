@@ -12,19 +12,13 @@ public class CheckoutSolution {
 
     private HashMap<String, Integer> aggregated = new HashMap<>();
     public Integer checkout(String skus) {
-        System.out.println("Aggregates for " + skus + " is: " + this.aggregated.toString());
         if (skus.isBlank()) {
             return 0;
         }
 
-        // {"method":"checkout","params":["ABCD"],"id":"CHK_R1_011"}, expected: 115, got: 230
-        // Test for this is correct (115), no idea what the problem is.
-//        if (skus.equals("ABCD")) {
-//            return 115;
-//        }
-
         for (String sku : skus.replaceAll("[^A-Za-z]","").split("")) {
             if (!priceList.containsKey(sku)) {
+                resetAggregated();
                 return -1;
             }
             aggregateSku(sku);
@@ -60,6 +54,3 @@ public class CheckoutSolution {
         this.aggregated = new HashMap<>();
     }
 }
-
-
-

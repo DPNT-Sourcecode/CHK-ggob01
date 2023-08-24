@@ -3,13 +3,8 @@ package befaster.solutions.CHK;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.*;
-
-
-import java.time.Instant;
 import java.util.HashMap;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CheckoutSolutionTest {
@@ -75,8 +70,8 @@ public class CheckoutSolutionTest {
             HashMap<String, Integer> assertions = new HashMap<>();
             assertions.put("", 0);
             assertions.put("A", 50);
-//            assertions.put("B", 30);
-//            assertions.put("C", 20);
+            assertions.put("B", 30);
+            assertions.put("C", 20);
             assertions.put("D", 15);
             assertions.put("a", -1);
             assertions.put("-", -1);
@@ -84,15 +79,15 @@ public class CheckoutSolutionTest {
             assertions.put("AxA", -1);
             assertions.put("ABCD", 115);
             assertions.put("AA", 100);
-//            assertions.put("AAA", 130);
-//            assertions.put("AAAA", 180);
+            assertions.put("AAA", 130);
+            assertions.put("AAAA", 180);
             assertions.put("AAAAA", 230);
             assertions.put("AAAAAA", 260);
             assertions.put("BB", 45);
-//            assertions.put("BBB", 75);
+            assertions.put("BBB", 75);
             assertions.put("BBBB", 90);
             assertions.put("ABCDABCD", 215);
-//            assertions.put("BABDDCAC", 215);
+            assertions.put("BABDDCAC", 215);
             assertions.put("AAABB", 175);
             assertions.put("ABCDCBAABCABBAAA", 505);
 
@@ -123,9 +118,3 @@ public class CheckoutSolutionTest {
     }
 
 }
-
-
-
-
-
-
