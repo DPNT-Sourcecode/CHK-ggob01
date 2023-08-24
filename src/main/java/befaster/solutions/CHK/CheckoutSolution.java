@@ -6,8 +6,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CheckoutSolution {
+    private final DiscounterFactory discounterFactory;
     private HashMap<String, SkuPricing> priceList = Helper.buildPriceList();
     private HashMap<String, Integer> aggregated = new HashMap<>();
+
+    // DiscountFactory could ideally be injected if we wanted to completely switch out
+    // discount functionality. Leaving as constructor created for now.
+    public CheckoutSolution() {
+        this.discounterFactory = new DiscounterFactory();
+    }
     public Integer checkout(String skus) {
         if (skus.isBlank()) {
             return 0;
@@ -34,7 +41,9 @@ public class CheckoutSolution {
 
         for (Map.Entry<String, Integer> skuCount : aggregated.entrySet()) {
             String sku = skuCount.getKey();
-            Discounter discounter =
+            String discountPolicy = priceList.get(sku).getOfferType();
+
+            Discounter discounter = this.discounterFactory.getDiscounter(discountPolicy);
             totalPrice += discounter.priceForSku(sku, this.aggregated);
         }
         resetAggregated();
@@ -46,5 +55,6 @@ public class CheckoutSolution {
         this.aggregated = new HashMap<>();
     }
 }
+
 
 
