@@ -138,6 +138,20 @@ public class CheckoutSolutionTest {
         }
     }
 
+    @Nested
+    @DisplayName("When there are multiple discount types, we favour the customer and apply them")
+    class WithMultipleDiscountTypes {
+
+        @Test
+        @DisplayName("multiple discounts are applied to the same products if matched")
+        public void testTotalSumWithMultibuyDiscountTypes() {
+            Integer DiscountPrice = 95;
+
+            assertEquals(DiscountPrice, checkout.checkout("E, E, B, B"));
+        }
+    }
+
 }
+
 
 
