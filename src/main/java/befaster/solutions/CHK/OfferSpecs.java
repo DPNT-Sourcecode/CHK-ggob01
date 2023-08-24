@@ -1,6 +1,6 @@
 package befaster.solutions.CHK;
 
-class OfferSpecs implements Comparable {
+public class OfferSpecs implements Comparable {
 
     private final int offerMultiple;
     private String constrainingSku;
@@ -26,10 +26,7 @@ class OfferSpecs implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        o = (OfferSpecs) o;
-
-        (this.offerPrice / this.offerMultiple) - (((OfferSpecs) o).getOfferPrice() - ((OfferSpecs) o).getOfferMultiple())
+        return (this.offerPrice / this.offerMultiple) -
+            (((OfferSpecs) o).getOfferPrice() / ((OfferSpecs) o).getOfferMultiple());
     }
 }
-
-

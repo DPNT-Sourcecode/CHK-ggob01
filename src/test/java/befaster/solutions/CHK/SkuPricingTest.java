@@ -14,7 +14,11 @@ public class SkuPricingTest {
 
     @BeforeEach
     public void setUp() {
-        sku = new SkuPricing("A", 10, "offerType", 2, 15);
+        OfferSpecs[] aos = new OfferSpecs[]{
+            new OfferSpecs("A", 3, 130),
+            new OfferSpecs("A", 5, 200),
+        };
+        sku = new SkuPricing("A", 10, "offerType", aos);
     }
 
     @Test
@@ -28,12 +32,11 @@ public class SkuPricingTest {
     }
 
     @Test
-    public void testGetOfferMultipleForSku() {
-        assertThat(sku.getOfferMultiple() ,equalTo(2));
-    }
-
-    @Test
-    public void testGetOfferPriceForSku() {
-        assertThat(sku.getOfferPrice() ,equalTo(15));
+    public void testGetOfferSpecsForSku() {
+        OfferSpecs[] aos = new OfferSpecs[]{
+            new OfferSpecs("A", 3, 130),
+            new OfferSpecs("A", 5, 200),
+        };
+        assertThat(sku.getOfferSpecs() ,equalTo(aos));
     }
 }
